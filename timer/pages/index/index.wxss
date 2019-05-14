@@ -1,0 +1,23 @@
+/**index.wxss**/
+.index-button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 40rpx;
+  margin-top: 40rpx;
+  -webkit-box-shadow: 0 0 10rpx 0 #1279ff;
+  -moz-box-shadow: 0 0 10rpx 0 #1279ff;
+  box-shadow: 0 0 10rpx 0 #1279ff;
+}
+.index-button::after{
+  border: none;
+}
+.index-list {
+  width:  100%;
+  flex: 1;
+  padding: 0 20rpx 40rpx;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: auto;
+}

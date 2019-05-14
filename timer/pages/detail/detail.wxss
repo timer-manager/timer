@@ -1,0 +1,104 @@
+/* pages/detail.wxss */
+.detail-main {
+    flex-shrink: 0;
+    height: 230rpx;
+}
+view {
+    outline: none;
+}
+.detail-count {
+    font-size: 100rpx;
+    text-align: center;
+    line-height: 150rpx;
+    height: 150rpx;
+    color: #323232;
+    font-weight: bold;
+}
+
+.detail-extra {
+    font-size: 0;
+    display: flex;
+    padding: 0 30rpx;
+}
+.detail-extra-block {
+    display: flex;
+    width: 50%;
+    font-size: 36rpx;
+    color: #666;
+}
+.detail-extra-title {
+    flex-shrink: 0;
+    width: 100rpx;
+    color: #999;
+}
+.detail-extra-num {
+    flex: 1;
+    text-align: right;
+    padding-right: 20rpx;
+}
+.detail-list {
+    flex: 1;
+    overflow: auto;
+    padding: 40rpx 40rpx 60rpx 40rpx;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.detail-list.hidden {
+    overflow: hidden;
+}
+.detail-item {
+    text-align: center;
+    margin-bottom: 40rpx;
+    background: white;
+    border-radius: 16rpx;
+    padding: 40rpx 0;
+    line-height: 50rpx;
+    -webkit-box-shadow: 2rpx 2rpx 15rpx 0 rgba(18,150,219,0.1);
+    -moz-box-shadow: 2rpx 2rpx 15rpx 0 rgba(18,150,219,0.1);
+    box-shadow: 2rpx 2rpx 15rpx 0 rgba(18,150,219,0.1);
+}
+.detail-item-name {
+    display: block;
+    padding: 20rpx;
+    font-size: 60rpx;
+    line-height: 60rpx;
+    color: #323232;
+}
+.detail-item-time {
+    display: block;
+    color: #666;
+}
+.detail-item-introduction {
+    color: #999;
+    padding: 20rpx 0;
+}
+.detail-footer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 20rpx 40rpx;
+    background: white;
+}
+.detail-footer>button {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+    border: none;
+    border-radius: 0;
+    background: white;
+}
+button::after {
+    border: none
+}
+.detail-icon {
+    height: 64rpx;
+    width: 64rpx;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}

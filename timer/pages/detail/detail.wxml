@@ -1,0 +1,39 @@
+<!--pages/detail.wxml-->
+<wxs src="./detail.wxs" module="utils"/>
+<view class="container">
+    <view class="header">maxx mma</view>
+    <view class="detail-main">
+        <view class="detail-count">{{utils.formatterTime(remainingTime)}}</view>
+        <view class="detail-extra">
+            <view class="detail-extra-block">
+                <text class="detail-extra-title">历时 :</text>
+                <text class="detail-extra-num">{{utils.formatterTime(runTime)}} ({{currentIndex + 1}}/{{content.length}})</text>
+            </view>
+            <view class="detail-extra-block">
+                <text class="detail-extra-title">剩余 :</text>
+                <text class="detail-extra-num">{{utils.formatterTime(totalTime + remainingTime, 0)}}</text>
+            </view>
+        </view>
+    </view>
+    <scroll-view class="detail-list" scroll-y="{{!lockState}}" enable-back-to-top
+                 scroll-into-view="{{scrollDomName}}" scroll-with-animation>
+        <button class="detail-item" wx:for="{{content}}" id="button{{index}}"
+                wx:disabled="{{index === currentIndex}}" wx:key="{{index}}" bindtap="handleClickItem"
+              data-index="{{index}}">
+            <text class="detail-item-name">{{item.name}}</text>
+            <text class="detail-item-introduction" wx-show="item.introduction">{{item.introduction}}</text>
+            <text class="detail-item-time">{{utils.formatterTime(item.time)}}</text>
+        </button>
+    </scroll-view>
+    <view class="detail-footer">
+        <button class="detail-reset" bindtap="reset">
+            <image src="../../assets/refresh.png" class="detail-icon"></image>
+        </button>
+        <button class="detail-operate" bindtap="operate">
+            <image src="{{runningState||breakState?pauseImage:playImage}}" class="detail-icon"></image>
+        </button>
+        <button class="detail-lock" bindtap="lock">
+            <image src="{{lockState?lockImage:unlockImage}}" class="detail-icon"></image>
+        </button>
+    </view>
+</view>

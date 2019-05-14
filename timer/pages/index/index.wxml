@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">maxx mma</view>
+  <view class="index-list">
+    <button wx:for="{{list}}" wx:key="index" class="index-button" bindtap="goToDetail" data-type="{{item.uid}}">{{item.name}}</button>
+  </view>
+</view>

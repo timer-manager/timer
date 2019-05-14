@@ -1,0 +1,28 @@
+/**
+ * 格式化时间
+ * model 0 为hh:mm:ss 1 为mm:ss  2 为h小时m分钟s秒
+ */
+function formatterTime(time, model) {
+    if (!time || time < 0) return (model === 2 || model === '2') ? '0秒' : '00:00';
+    var m = parseInt((time % 3600) / 60), s = time % 60, h = parseInt(time / 3600), str;
+    if (model === 1 || model === '1') {
+        m = parseInt(time / 60);
+        str = toFixedTwo(m) + ':' + toFixedTwo(s);
+    } else if (model === 2 || model === '2') {
+        str = (h > 0 ? (toFixedTwo(h) + '小时') : '') + (m > 0 ? (toFixedTwo(m) + '分') : '') + toFixedTwo(s) + '秒';
+    } else {
+        str = (h > 0 ? (toFixedTwo(h) + ':') : '') + toFixedTwo(m) + ':' + toFixedTwo(s);
+    }
+    return str;
+}
+
+/**
+ * 保留早少两位
+ * @param number
+ * @returns {string}
+ */
+function toFixedTwo(number) {
+    return (number < 10 ? ('0' + number) : number);
+}
+
+module.exports.formatterTime = formatterTime;
